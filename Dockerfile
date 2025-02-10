@@ -8,6 +8,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+#openai api key
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
+
 # Set the PYTHONPATH to include src/
 ENV PYTHONPATH=/app/src
 
