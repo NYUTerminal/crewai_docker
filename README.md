@@ -113,6 +113,9 @@ My port 5000 is in use - so using another one 5001
 `curl http://localhost:5001`
 
 ### Run application with arguments in Docker
+Note: Before running the app in export the open ai key to OPENAI_API_KEY
+`export OPENAI_API_KEY="<YOUR_OPENAPI_KEY>"`
+
 Note: Arguments such as test, train, replay aren't working as yet!
 
 Run the Default Behavior (run):
@@ -130,3 +133,11 @@ Debugging in Docker - you can run the container interactively:
 
 Once inside the container:
 `python src/docker_crew_template/main.py`
+
+### Sample First run for the WebScraper
+`docker run -it --rm -e OPENAI_API_KEY=$OPENAI_API_KEY -v /Users/praveen/Documents/projects/crewai/crewai_docker:/app --entrypoint /bin/bash my-crew_app`
+
+#### Run the WebScraper
+`python3 src/docker_crew_template/main.py run "https://www.eatnamkeen.com/"`
+
+![sample_webscraper_run.png](screenshots/sample_webscraper_run.png)
